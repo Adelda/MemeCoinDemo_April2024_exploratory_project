@@ -189,12 +189,15 @@ html {
 /* Pour les écrans plus larges (e.g., desktops) */
 @media (min-width: 768px) {
   .image-desktop {
-    max-width: 50%; /* Réduit la largeur maximale de l'image à 50% du conteneur */
-    height: auto; /* Ajuste la hauteur automatiquement pour maintenir le ratio d'aspect */
+    max-width: 75%; /* Maintient la largeur maximale de l'image à 50% du conteneur */
+    max-height: 600px; /* Contrôle la hauteur maximale sans couper l'image */
+    height: auto; /* Maintient le ratio d'aspect de l'image */
     display: block; /* Pour centrer l'image dans son conteneur */
     margin-left: auto;
     margin-right: auto;
-    object-fit: cover; /* Ajuste l'image pour couvrir l'espace disponible, sans perdre ses proportions */
+    object-fit: contain; /* Garantit que toute l'image est visible sans rognage */
   }
 }
+
+
 
