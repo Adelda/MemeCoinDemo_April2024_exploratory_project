@@ -1,3 +1,4 @@
+// Fonction pour barrer le texte
 function strikeThroughText() {
     var element = document.getElementById("textToStrike");
     var fragments = element.innerHTML.split(/(<span class="highlight">.*?<\/span>)/g); 
@@ -28,18 +29,40 @@ function strikeThroughText() {
     });
 }
 
-
+// Fonction pour afficher le texte
 function revealText() {
     const text = document.querySelector('.announcement-text');
     text.style.opacity = 1; 
     text.style.transform = 'translateY(0)'; 
 }
 
+// Fonction pour défilement du texte
+function scrollText() {
+    var lastScrollTop = 0;
+    var header = document.querySelector("header");
+
+    window.addEventListener("scroll", function () {
+        var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > lastScrollTop) {
+            // Scrolling down
+            header.style.top = "-100px"; // Cacher le header vers le haut
+        } else {
+            // Scrolling up
+            header.style.top = "0"; // Afficher le header
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+}
+
+// Écouteur d'événement pour détecter le défilement de la fenêtre
+window.addEventListener('scroll', function() {
+    // Appeler la fonction de défilement du texte lorsque l'utilisateur fait défiler la page
+    scrollText();
+});
+
+// Fonction exécutée lorsque la fenêtre est chargée
 window.onload = function() {
-    strikeThroughText();
+    strikeThroughText(); // Appel de la fonction pour barrer le texte
+    revealText(); // Appel de la fonction pour afficher le texte
 };
-
-
-
-
-
