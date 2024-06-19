@@ -37,7 +37,7 @@
         const permission = await Notification.requestPermission();
         if (permission === 'granted') {
           console.log('Notification permission granted.');
-          const token = await getToken(messaging, { vapidKey: 'YOUR_PUBLIC_VAPID_KEY_HERE' });
+          const token = await getToken(messaging, { vapidKey: 'BAszWP3EcR1Fye0enGdosgCyAAo1CskXCq4cEWBX97FkF44vmjL-2ojMYMASpUr5fzUchIhI-TgXnCNr7Q3GI6s' });
           console.log('FCM Registration Token:', token);
           alert('FCM Registration Token: ' + token);
           // Copy the token and use it to send test notifications from Firebase Console
