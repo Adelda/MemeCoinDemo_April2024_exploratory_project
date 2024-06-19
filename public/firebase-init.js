@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from '/firebase/app';
 import { getMessaging, getToken, onMessage } from 'firebase/messaging';
 
 // Remplacez par la configuration de votre projet Firebase
