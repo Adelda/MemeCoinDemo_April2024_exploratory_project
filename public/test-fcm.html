@@ -9,21 +9,7 @@
   <h1>Test FCM Notifications</h1>
   <button id="requestPermission">Request Notification Permission</button>
   <script type="module">
-    import { initializeApp } from "./firebase-app.js";
-    import { getMessaging, getToken, onMessage } from "./firebase-messaging.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyA6aYOgAscSQe4W0WJgB9Ha0X21WMbyBCw",
-      authDomain: "test-4dd75.firebaseapp.com",
-      projectId: "test-4dd75",
-      storageBucket: "test-4dd75.appspot.com",
-      messagingSenderId: "713610534619",
-      appId: "1:713610534619:web:73a87ecd45a68fc608f6fe",
-      measurementId: "G-517JXC2V10"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const messaging = getMessaging(app);
+    import { messaging } from './firebase-init.js';
 
     document.getElementById('requestPermission').onclick = async function() {
       console.log('Requesting permission...');
